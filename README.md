@@ -10,7 +10,7 @@
 
 ## .NET CLI 설치
 
-먼저 닷넷 명령행 도구를 설치해야 한다. [이 페이지](https://dotnet.microsoft.com/download)에서 자신의 환경에 맞는 .NET Core를 다운로드 받아 설치한다.
+먼저 닷넷 명령행 도구를 설치해야 한다. [이 페이지](https://aka.ms/dotnet-download)에서 자신의 환경에 맞는 .NET Core를 다운로드 받아 설치한다.
 
 당연한 이야기지만, 개발하는 측에서는 Runtime이 아닌 SDK를 설치해야 한다. 또한, 리눅스로 배포할 것이므로 닷넷 프레임워크를 설치하는 우를 범하지 않도록 한다.
 
@@ -155,3 +155,15 @@ Gradle을 쓸때는 빌드 스크립트가 잘못되면 프로젝트 만들때�
 하위 호환성은 조금 아쉽다. 아니, 아무리 그래도 그렇지 2.1.5에서 만든게 2.1.8에서 안돌아간다고 하면 이건 너무하는거 같은데😓
 
 내가 상위버전에서 만들고 하위버전에서 돌린것도 아닌데 이래버리면, 쩝. 데비안 계열을 쓰게 되면 ```apt```로 자주자주 패키지를 업데이트 할수도 있다는걸 생각해보면, 어느날 갑자기 엿먹고 서비스 구동 불능 사태가 오는 경우도 왕왕 있을듯😑
+
+## reference
+
+  * [.NET Core CLI(명령줄 인터페이스) 도구](https://docs.microsoft.com/ko-kr/dotnet/core/tools/?tabs=netcore2x)
+  * [ASP.NET Core Web API – Linux Deployment](https://code-maze.com/net-core-web-development-part17/)
+    * 처음인 이 문서에서 MySQL 설치 같은 부분만 건너뛰고 진행했는데 잘 안되더라😑
+  * [Linux에서 .NET Core의 필수 구성 요소](https://docs.microsoft.com/ko-kr/dotnet/core/linux-prerequisites?tabs=netcore2x)
+    * 사실 별 필요는 없는 문서. 리눅스에서 닷넷코어의 패키지 의존성 관련 문제인데, 어차피 ```apt```나 ```yum```이 알아서 다 해주니 그닥 필요는 없겠다.
+  * [Install .NET Core SDK on Linux Ubuntu 18.04 x64](https://dotnet.microsoft.com/download/linux-package-manager/ubuntu18-04/sdk-current)
+    * 본문에서도 언급된, 리눅스에 닷넷 실행환경 or 닷넷 SDK 설치 페이지
+  * [.NET Core 애플리케이션 배포](https://docs.microsoft.com/ko-kr/dotnet/core/deploying/index)
+    * 닷넷 어플리케이션의 3가지 유형의 배포셋
