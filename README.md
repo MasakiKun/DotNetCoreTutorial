@@ -111,11 +111,11 @@
 
 내 경우, 로컬 개발환경은 Windows 10 + .NET Core 2.1.5 였고, 리눅스는 Ubuntu Server 18.04.2 + .NET Core 2.1.8 이었는데, 실행시에 해당 버전에 맞는 AspDotNetCore가 존재하지 않는다면서 에러메시지만 뿜고 실행되지 않았다.
 
-닷넷은 배포 패키지 안에 실행환경이 포함된 자체포함 어플리케이션(Self-contained Application)을 만들 수 있다. 자체포함 어플리케이션으로 만들면, 배포할 서버에 닷넷코어 실행환경을 굳이 설치하지 않아도 된다는 장점이 있다. 이 앱의 실행환경이 다른 서비스와 격리된다는 점은 덤. 마치 자바 9 이후에 추가된 [jlink](https://github.com/MasakiKun/jlink-example) 같은 느낌이다.
+닷넷은 배포 패키지 안에 실행환경이 포함된 자체포함 어플리케이션(Self-contained Application)을 만들 수 있다. 자체포함 어플리케이션으로 만들면, 배포할 서버에 닷넷코어 실행환경을 굳이 설치하지 않아도 된다는 장점이 있다. 이 앱의 실행환경이 다른 서비스와 격리된다는 점은 덤. 자바 9 이후에 추가된 [jlink](https://github.com/MasakiKun/jlink-example) 같은 느낌이다.
 
 개인적으로는 간편하게 배포하고 실행할 수 있는 self-contained 어플리케이션이 배포와 운영에 더 유리하지 않을까 생각해본다. 뭐, 필드에서 어떻게 받아들여질지는 모르겠지만.
 
-self-contained 어플리케이션을 만들기 위해서는 publish 옵션에 ```--runtime``` 옵션과 배포할 서버의 운영환경을 주면 된다. 닷넷코어에서 지원하는 런타임셋은 [.NET Core RID 카탈로그](https://docs.microsoft.com/ko-kr/dotnet/core/rid-catalog) 페이지를 참고한다.
+self-contained 어플리케이션을 만들기 위해서는 publish 명령에 ```--runtime``` 옵션으로 배포할 서버의 운영환경을 주면 된다. 닷넷코어에서 지원하는 런타임셋은 [.NET Core RID 카탈로그](https://docs.microsoft.com/ko-kr/dotnet/core/rid-catalog) 페이지를 참고한다.
 
 서론이 길었는데, 요는 publish 명령에 ```--runtime``` 옵션을 줘서 만들면, 실행할 환경에서는 닷넷 실행환경을 설치할 필요가 없다는 것이다.
 
@@ -134,7 +134,7 @@ self-contained 어플리케이션을 만들기 위해서는 publish 옵션에 ``
 
 ### 비주얼 스튜디오 코드로 개발하기
 
-[VSCode](https://code.visualstudio.com/)는 요새는 각종 플러그인을 설치해서 쓸 수 있는 범용 개발툴같은 느낌이 강하지만, 마이크로소프트에서 만든거라 그런지 특히 C# 개발할때 굉장히 편리하다. 간이 비주얼 스튜디오를 쓰는 수준.
+[VSCode](https://code.visualstudio.com/)는 요새는 각종 플러그인을 설치해서 쓸 수 있는 범용 개발툴이라는 느낌이 강하지만, 마이크로소프트에서 만든거라 그런지 특히 C# 개발할때 굉장히 편리하다. 간이 비주얼 스튜디오를 쓰는 수준.
 
 VSCode에서 닷넷코어 프로젝트를 개발하기 위해서는, 프로젝트 폴더를 연 뒤 솔루션 파일을 연다. 처음에는 ```The 'C#' extension is recommemded for this file type.```이라는 메시지가 표시되므로 Install을 클릭해서 C# 플러그인을 설치한다. 잠시 기다리면 ```Requred assets to build and debug are missing from '프로젝트'. Add them?```이라고 표시되므로 Yes를 클릭하면 자동으로 실행환경을 잡아준다.
 
