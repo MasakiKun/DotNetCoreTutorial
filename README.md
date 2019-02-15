@@ -117,7 +117,7 @@
 
 self-contained 어플리케이션을 만들기 위해서는 publish 옵션에 ```--runtime``` 옵션과 배포할 서버의 운영환경을 주면 된다. 닷넷코어에서 지원하는 런타임셋은 [.NET Core RID 카탈로그](https://docs.microsoft.com/ko-kr/dotnet/core/rid-catalog) 페이지를 참고한다.
 
-서론이 길었는데, 요는 publish 명령에 ```--runtime``` 옵션을 주면 된다는 것이다.
+서론이 길었는데, 요는 publish 명령에 ```--runtime``` 옵션을 줘서 만들면, 실행할 환경에서는 닷넷 실행환경을 설치할 필요가 없다는 것이다.
 
     dotnet publish --configuration Release --output publish --runtime linux-x64
 
