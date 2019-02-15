@@ -61,9 +61,9 @@
 
 여기서는 웹 프로젝트에 라이브러리 프로젝트를 참조하도록 설정했다.
 
-참고로 ```add``` 명령의 ```reference``` 명령이 아닌 ```package``` 명령으로 nuget 패키지를 참조하도록 설정할 수 있다. 설치할 패키지는 [NuGet](https://www.nuget.org) 사이트에서 검색하면 된다. 어차피 NuGet 사이트에서 패키지 참조 설정 명령어까지 다 표시되긴 하지만, 굳이 예를 들자면 JSON 처리를 위한 Newtonsoft.Json 패키지를 참조하려면 아래와 같이 하면 된다.
+참고로 ```add``` 명령의 ```reference``` 명령이 아닌 ```package``` 명령으로 nuget 패키지를 참조하도록 설정할 수 있다. 설치할 패키지는 [NuGet](https://www.nuget.org) 사이트에서 검색하면 된다. 어차피 NuGet 사이트에서 패키지 참조 설정 명령어까지 다 표시되긴 하지만, 굳이 예를 들자면 웹 프로젝트에 JSON 처리를 위한 Newtonsoft.Json 패키지를 참조하려면 아래와 같이 하면 된다.
 
-    dotnet add package Newtonsoft.Json
+    dotnet add MyWeb\My.Web.csproj package Newtonsoft.Json
 
 ### 배포 패키지 생성
 
